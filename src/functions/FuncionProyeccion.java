@@ -16,9 +16,9 @@ public class FuncionProyeccion extends FuncionBase {
     }
 
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args);
-        return args.get(index);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments);
+        return arguments.get(index);
     }
 
     @Override

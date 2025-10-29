@@ -22,14 +22,14 @@ public class Recursion extends FuncionBase {
     }
 
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args, false);
-        if (args.size() != arity) {
-            throw new IllegalArgumentException("Recursion: incorrect arity. Expected " + arity + " but got " + args.size());
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments, false);
+        if (arguments.size() != arity) {
+            throw new IllegalArgumentException("Recursion: incorrect arity. Expected " + arity + " but got " + arguments.size());
         }
         int n = arity - 1;
-        List<Integer> xs = args.subList(0, n);
-        int y = args.get(n);
+        List<Integer> xs = arguments.subList(0, n);
+        int y = arguments.get(n);
         if (y == 0) {
             return baseFunction.evaluar(new ArrayList<>(xs), counter);
         }

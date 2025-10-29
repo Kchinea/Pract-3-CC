@@ -26,15 +26,15 @@ public class Composicion extends FuncionBase {
     }
 
     /**
-     * Evaluate the composition: evaluate each gi with args, then
+     * Evaluate the composition: evaluate each gi with arguments, then
      * pass the results list to h.
      */
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args, false);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments, false);
         List<Integer> results = new ArrayList<>();
         for (FuncionBase gi : gFunctions) {
-            results.add(gi.evaluar(args, counter));
+            results.add(gi.evaluar(arguments, counter));
         }
         return hFunction.evaluar(results, counter);
     }

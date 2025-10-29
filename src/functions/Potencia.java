@@ -37,8 +37,8 @@ public class Potencia extends FuncionBase {
      * Delegates to internal implementation.
      */
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        return implementation.evaluar(args, counter);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        return implementation.evaluar(arguments, counter);
     }
 
     /**

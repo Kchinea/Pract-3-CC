@@ -15,17 +15,17 @@ public class Multiplicacion extends FuncionBase {
 
     public Multiplicacion() {
         // mult(x,y): g(x)=0  ; h(x,y,z)=plus(z,x)
-        FuncionCero z1 = new FuncionCero(); // arity 1
+        FuncionCero z1 = new FuncionCero();
         Suma plus = new Suma();
-        FuncionProyeccion p3_3 = new FuncionProyeccion(3, 2); // prev
+        FuncionProyeccion p3_3 = new FuncionProyeccion(3, 2); // previous result
         FuncionProyeccion p1_3 = new FuncionProyeccion(3, 0); // x
         Composicion h_mult = new Composicion(plus, Arrays.asList(p3_3, p1_3));
         implementation = new Recursion(z1, h_mult);
     }
 
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        return implementation.evaluar(args, counter);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        return implementation.evaluar(arguments, counter);
     }
 
     @Override

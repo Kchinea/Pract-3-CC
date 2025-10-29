@@ -9,9 +9,9 @@ import pract3.core.Trace;
  *
  * Diseño y contrato:
  * - Cada función recursiva primitiva será representada como una subclase de FuncionBase.
- * - El método evaluar(List<Integer> args, Counter contador)
+ * - El método evaluar(List<Integer> arguments, Counter contador)
  *   es el único punto de entrada para calcular el valor de la función.
- *   - args contiene los argumentos de la llamada actual.
+ *   - arguments contiene los argumentos de la llamada actual.
  *   - contador es un entero mutable (usamos {@link Counter})
  *     que actúa como contador compartido de llamadas/traza.
  *
@@ -28,12 +28,12 @@ public abstract class FuncionBase {
     /**
      * Evaluar la función con los argumentos dados, se llama a la funcion traceInc por defecto.
      *
-     * @param args lista de argumentos de la llamada (no nula)
+     * @param arguments lista de argumentos de la llamada (no nula)
      * @param contador contador mutable compartido (ahora de tipo Counter)
      * @return el resultado numérico de la función
      */
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments);
         return 0;
     }
 
@@ -58,15 +58,15 @@ public abstract class FuncionBase {
      *   debe incrementarse el contador (cuando false sólo se traza).
      *
      * @param contador contador compartido
-     * @param args argumentos de la llamada
+     * @param arguments argumentos de la llamada
      * @return el nuevo valor del contador tras la incrementación (o el valor
      *         actual si no se incrementó)
      */
-    protected int traceInc(Counter counter, List<Integer> args) {
-        return traceInc(counter, args, true);
+    protected int traceInc(Counter counter, List<Integer> arguments) {
+        return traceInc(counter, arguments, true);
     }
-    protected int traceInc(Counter counter, List<Integer> args, boolean increment) {
-        Trace.log(this.getClass().getSimpleName(), args == null ? java.util.Collections.emptyList() : args);
+    protected int traceInc(Counter counter, List<Integer> arguments, boolean increment) {
+        Trace.log(this.getClass().getSimpleName(), arguments == null ? java.util.Collections.emptyList() : arguments);
         if (increment) {
             return counter.incrementAndGet();
         } else {

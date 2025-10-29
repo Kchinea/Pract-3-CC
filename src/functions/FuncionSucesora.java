@@ -8,9 +8,9 @@ import pract3.core.Counter;
  */
 public class FuncionSucesora extends FuncionBase {
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args);
-        return args.get(0) + 1;
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments);
+        return arguments.get(0) + 1;
     }
 
     @Override

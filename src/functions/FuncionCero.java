@@ -8,8 +8,8 @@ import pract3.core.Counter;
  */
 public class FuncionCero extends FuncionBase {
     @Override
-    public int evaluar(List<Integer> args, Counter counter) {
-        traceInc(counter, args);
+    public int evaluar(List<Integer> arguments, Counter counter) {
+        traceInc(counter, arguments);
         return 0;
     }
 
