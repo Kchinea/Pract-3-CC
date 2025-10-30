@@ -4,7 +4,7 @@ import java.util.List;
 import pract3.core.Counter;
 
 /**
- * Sucesora S(x) = x + 1.
+ * Sucesor S(x) = x + 1.
  */
 public class FuncionSucesora extends FuncionBase {
     @Override

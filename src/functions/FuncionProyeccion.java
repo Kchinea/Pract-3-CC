@@ -4,7 +4,7 @@ import java.util.List;
 import pract3.core.Counter;
 
 /**
- * Proyección P_i^n: devuelve el i-ésimo argumento (iIndex 0-based).
+ * Proyection P_i^n: return the i-th argument (0-based index).
  */
 public class FuncionProyeccion extends FuncionBase {
     private int arity;

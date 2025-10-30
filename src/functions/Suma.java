@@ -7,20 +7,20 @@ import pract3.operations.Composicion;
 import pract3.operations.Recursion;
 
 /**
- * Implementación de la suma como función recursiva primitiva.
+ * Implementation of the sum function like primitive recursion function.
  *
- * Construcción (intuitiva):
+ * Construction of the addition function plus(x,y) using primitive recursion:
  *  - plus(x,0) = x                 (g(x) = P1^1)
  *  - plus(x,y+1) = S( plus(x,y) )  (h(x,y,z) = S(z))
  *
- * Esta clase actúa como un envoltorio (wrapper): en el constructor crea
- * internamente la función Recursion que implementa la definición
- * anterior y delega todas las llamadas al objeto implementation.
+ * This class acts as a wrapper: in the constructor it creates
+ * internally the Recursion function that implements the previous definition
+ * and delegates all calls to the implementation object.
  */
 public class Suma extends FuncionBase {
     private final FuncionBase implementation;
     /**
-     * Construye la función plus usando las primitivas:
+     * Constructs the plus function using the primitives:
      * - g = P1^1
      * - h = S ∘ P3^3
      */
@@ -34,14 +34,14 @@ public class Suma extends FuncionBase {
         implementation = new Recursion(projectFirst, successorOfThird);
     }
     /**
-     * Delegación: pasar los argumentos y el contador a la implementación real.
+     * Delegation: pass the arguments and the counter to the real implementation.
      */
     @Override
     public int evaluar(List<Integer> arguments, Counter counter) {
         return implementation.evaluar(arguments, counter);
     }
     /**
-     * Devuelve la aridad de la función construida (delega en implementation).
+     * Returns the arity of the constructed function (delegates to implementation).
      */
     @Override
     public int getArity() {

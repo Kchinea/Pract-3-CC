@@ -48,19 +48,19 @@ public abstract class FuncionBase {
     }
 
     /**
-     * Metodo helper que incrementa el contador y registra una entrada de traza.
-     * Todas las implementaciones deberían llamar a traceInc al entrar
-     * en evaluar para que la llamada sea contabilizada o al menos
-     * mostrada en traza. Hay dos sobrecargas:
-     * - traceInc(Counter, java.util.List) incrementa el contador y
-     *   registra la traza (comportamiento por defecto).
-     * - traceInc(Counter, java.util.List, boolean) permite indicar si
-     *   debe incrementarse el contador (cuando false sólo se traza).
+     * Helper method for tracing function calls.
+     * All implementations should call traceInc upon entering
+     * evaluate so that the call is counted or at least
+     * shown in the trace. There are two overloads:
+     * - traceInc(Counter, java.util.List) increments the counter and
+     *   logs the trace (default behavior).
+     * - traceInc(Counter, java.util.List, boolean) allows indicating if
+     *   the counter should be incremented (when false only the trace is logged).
      *
-     * @param contador contador compartido
-     * @param arguments argumentos de la llamada
-     * @return el nuevo valor del contador tras la incrementación (o el valor
-     *         actual si no se incrementó)
+     * @param counter shared counter
+     * @param arguments call arguments
+     * @return the new value of the counter after incrementing (or the actual value
+     *          if not incremented)
      */
     protected int traceInc(Counter counter, List<Integer> arguments) {
         return traceInc(counter, arguments, true);
